@@ -1,28 +1,83 @@
+import { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-const Login = () => {
-    return (
-        <div>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+import { Link } from 'react-router-dom';
+import { userAuth } from '../AuthProvider';
+import Header from '../shere/Header';
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+const Login = () => {
+    const {logInWithEmail,createUserGoogle,createUserGithub}=useContext(userAuth)
+    const handelSubmit=(event)=>{
+    event.preventDefault()
+    const form=event.target;
+    const email=form.email.value;
+    const password =form.password.value;
+    logInWithEmail(email,password)
+    .then(result=>{
+        const user=result.user;
+        console.log('login18',user);
+    }).catch(error=>{
+        console.error('error',error)
+    })
+    }
+    const hadelGooleLogin=()=>{
+        createUserGoogle()
+        .then(result=>{
+            const user =result.user;
+            console.log('login27',user);
+        }).catch(error=>{
+            console.error('error',error);
+        })
+    }
+    const handelGitLogin=()=>{
+        createUserGithub()
+        .then(result=>{
+            const user =result.user;
+            console.log('login37',user)
+        }).catch(error=>{
+            console.error('error',error);
+        })
+    }
+    
+   
+    return (
+        <div >
+            <Header />
+            <Container>
+                <Form className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg" onSubmit={handelSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control  name='email' type="email" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control name='password' type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <Button className="w-100" variant="primary" type="submit">
+                        Login
+                    </Button>
+                    <br/>
+                    <Button onClick={hadelGooleLogin} className="mt-3 w-100" variant="danger">
+                        Login with google
+                    </Button>
+                    <br/>
+                    <Button onClick={handelGitLogin} className="mt-3 w-100" variant="dark">
+                        Login with github
+                    </Button>
+                    <br/>
+                    <Link to='/signup'>Are You New ? <span className='text-danger'>register first</span> </Link>
+                     <br/>
+                    <Link to='/resetpassword'>Forget password ? </Link>
+                </Form>
+            </Container>
         </div>
     );
 };

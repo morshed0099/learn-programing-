@@ -1,29 +1,60 @@
+import { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
+import { userAuth } from '../AuthProvider';
+import Header from '../shere/Header';
 
 const SignUp = () => {
+    const { createUserEmail } = useContext(userAuth)
+    const handelSubmit = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const phoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUserEmail(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log('signup21', user);
+            }).catch(error => {
+                console.error('error', error);
+            })
+    }
     return (
         <div>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+            <Header></Header>
+            <Container>
+                <Form className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control name='name' type="text" placeholder="Enter Your Name" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Photo Url</Form.Label>
+                        <Form.Control name='photoURL' type="text" placeholder="Enter Your photo Url" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control name='email' type="email" placeholder="Enter Your email" />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control name='password' type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <Button variant="primary" className='w-100' type="submit">
+                        Sign Up
+                    </Button>
+                    <br />
+                    <Link to='/login'>Alredy You Have an Accaunt ?<span className='text-danger'>login</span>  </Link>
+                </Form>
+            </Container>
         </div>
     );
 };
