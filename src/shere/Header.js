@@ -7,10 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import ReactTooltip from 'react-tooltip';
-
-
-
-
+import { BeakerIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
 
 const Header = () => {
   const { user } = useContext(userAuth);
@@ -30,7 +27,10 @@ const Header = () => {
      
       <Navbar bg="light" style={{ zIndex: '99' }} className="shadow mb-4 position-sticky top-0" expand="lg">
         <Container >
-          <Navbar.Brand href="#">Learn Programing</Navbar.Brand>
+          <Navbar.Brand href="#"><ComputerDesktopIcon
+           style={{width:'40px',height:'40px'}} 
+           className="text-primary me-2"
+           /> Learn Programing</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className='ms-auto '>

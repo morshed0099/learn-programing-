@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
+import {  FaGithub, FaGoogle } from 'react-icons/fa';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 const Login = () => {
     const {logInWithEmail,createUserGoogle,createUserGithub}=useContext(userAuth)
@@ -62,15 +64,16 @@ const Login = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
                     <Button className="w-100" variant="primary" type="submit">
-                        Login
+                      <ArrowRightIcon className='text-light me-2' style={{width:'30px',height:'30px'}} />   Login
                     </Button>
                     <br/>
-                    <Button onClick={hadelGooleLogin} className="mt-3 w-100" variant="danger">
-                        Login with google
+                    <Button  onClick={hadelGooleLogin}  
+                      className="mt-3 w-100" variant="danger"  >
+                    <FaGoogle className='me-4' />   Login with google
                     </Button>
                     <br/>
                     <Button onClick={handelGitLogin} className="mt-3 w-100" variant="dark">
-                        Login with github
+                      <FaGithub className='me-4'/>  Login with github
                     </Button>
                     <br/>
                     <Link to='/signup'>Are You New ? <span className='text-danger'>register first</span> </Link>
