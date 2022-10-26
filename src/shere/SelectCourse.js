@@ -1,14 +1,27 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import {  useLoaderData } from 'react-router-dom';
 import Header from './Header';
 import Card from 'react-bootstrap/Card';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-const SelectCourse = () => {
+import Swal from 'sweetalert2';
 
+
+const SelectCourse = () => {
+    const Swal =require('sweetalert2');
     const select = useLoaderData();
     const { name, description } = select;
+    const handelConfirm=(event)=>{
+        event.preventDefault();
+        const form=event.target
+        Swal.fire(
+            'Good job!',
+            'course enroll success!',
+            'success'
+          )
+          form.reset()
+    }
     return (
         <div>
             <Header></Header>
@@ -31,26 +44,26 @@ const SelectCourse = () => {
                     </Col>
                     <Col lg='6'>
                         <Container>
-                            <Form className="border w-75 mx-auto shadow p-3 mt-3 rounded-3">
+                            <Form onSubmit={handelConfirm} className="border w-75 mx-auto shadow p-3 mt-3 rounded-3">
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Name</Form.Label>
-                                    <Form.Control name='name' type="text" placeholder="Enter Your Name" />
+                                    <Form.Control name='name' type="text" placeholder="Enter Your Name" required/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Phone Number</Form.Label>
-                                    <Form.Control name='phoneNumber' type="text" placeholder="Enter Your phone number" />
+                                    <Form.Control name='phoneNumber' type="text" placeholder="Enter Your phone number" required/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control name='email' type="email" placeholder="Enter Your email" />
+                                    <Form.Control name='email' type="email" placeholder="Enter Your email" required />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control name='password' type="password" placeholder="Password" />
+                                    <Form.Label>age</Form.Label>
+                                    <Form.Control name='age' type="number" placeholder="Enter Your Age" required/>
                                 </Form.Group>
                               
-                                <Button variant="primary" className='w-100' type="submit">
+                                <Button  variant="primary" className='w-100' type="submit">
                                    Confirm
                                 </Button>
                                 <br />
