@@ -26,7 +26,10 @@ const CourseDetails = () => {
                     <Card.Title>Total Vedio: <span className='text-primary'>{video_length}</span></Card.Title>
                     <Card.Title>Assignment: <span className='text-primary' >{assignment}</span></Card.Title>
                     <Card.Title>Price: <span className='text-primary'>{price}</span></Card.Title>
+                    <div className='d-flex justify-content-between'>
                     <Link to='/course'><Button variant="primary">Show ALL Course</Button></Link>
+                    <Link to={`/selectCourse/${id}`}><Button variant="primary">Get Premium Access</Button></Link>
+                    </div>
                 </Card.Body>
             </Card>
                     </Col>

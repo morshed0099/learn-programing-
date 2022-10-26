@@ -8,11 +8,19 @@ import SignUp from '../pages/SignUp'
 import AllCourse from "../shere/AllCourse";
 import CourseDetails from "../shere/CourseDetails";
 import ResetPassword from "../shere/ResetPassword";
+import SelectCourse from "../shere/SelectCourse";
 
 export const router=createBrowserRouter([
          {
             path:'/',
             element:<Home></Home>
+         },
+         {
+            path:'/selectCourse/:id',
+            loader:({params})=>{
+               return fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            element:<SelectCourse></SelectCourse>
          },
          {
             path:'/login',
@@ -34,8 +42,8 @@ export const router=createBrowserRouter([
          },
          {
             path:'/details/:id',
-            loader:()=>{
-               return fetch('http://localhost:5000/course/01')
+            loader:({params})=>{
+               return fetch(`http://localhost:5000/course/${params.id}`)
             },
             element:<CourseDetails></CourseDetails>
          },

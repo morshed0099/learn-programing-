@@ -5,8 +5,10 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
+    const Swal =require('sweetalert2');
     const { createUserEmail } = useContext(userAuth)
     const handelSubmit = (event) => {
         event.preventDefault()
@@ -18,9 +20,23 @@ const SignUp = () => {
         createUserEmail(email, password)
             .then(result => {
                 const user = result.user;
-                console.log('signup21', user);
+                console.log('login18', user);
+                Swal.fire(
+                    'Good job!',
+                    'signUP success!',
+                    'success'
+                  )
+                  form.reset()
             }).catch(error => {
                 console.error('error', error);
+                const massage=error.message           
+                Swal.fire({
+                    title: 'Error!',
+                    text: massage,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+                
             })
     }
     return (

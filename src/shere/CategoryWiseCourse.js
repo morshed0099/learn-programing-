@@ -15,7 +15,7 @@ const CategoryWiseCourse = ({allCourse}) => {
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                         {description}
-                    </Card.Text>
+                    </Card.Text>                    
                     <Link to={`/details/${id}`}><Button variant="primary">View Details</Button></Link>
                 </Card.Body>
             </Card>

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-
 import CategoryWiseCourse from '../shere/CategoryWiseCourse';
 
 
 const Courses = () => {
-    const courses =useLoaderData()
-        console.log(courses,"fad");
+    const courses =useLoaderData();    
     return (
         <div>           
            {

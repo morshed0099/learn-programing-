@@ -1,59 +1,101 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
-import {  FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Swal from 'sweetalert2';
+
 
 const Login = () => {
-    const {logInWithEmail,createUserGoogle,createUserGithub}=useContext(userAuth)
-    const handelSubmit=(event)=>{
-    event.preventDefault()
-    const form=event.target;
-    const email=form.email.value;
-    const password =form.password.value;
-    logInWithEmail(email,password)
-    .then(result=>{
-        const user=result.user;
-        console.log('login18',user);
-    }).catch(error=>{
-        console.error('error',error)
-    })
+   const Swal =require('sweetalert2');
+    const { logInWithEmail, createUserGoogle, createUserGithub } = useContext(userAuth)
+    const handelSubmit = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        logInWithEmail(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log('login18', user);
+                Swal.fire(
+                    'Good job!',
+                    'login success!',
+                    'success'
+                  )
+                  form.reset()
+            }).catch(error => {
+                console.error('error', error)
+                const massage=error.message           
+                Swal.fire({
+                    title: 'Error!',
+                    text: massage,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+                
+            })
     }
-    const hadelGooleLogin=()=>{
+    const hadelGooleLogin = () => {
         createUserGoogle()
-        .then(result=>{
-            const user =result.user;
-            console.log('login27',user);
-        }).catch(error=>{
-            console.error('error',error);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log('login27', user);
+                Swal.fire(
+                    'Good job!',
+                    'login success!',
+                    'success'
+                  )
+            }).catch(error => {
+                console.error('error', error);
+                const massage=error.message           
+                Swal.fire({
+                    title: 'Error!',
+                    text: massage,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+                
+            })
     }
-    const handelGitLogin=()=>{
+    const handelGitLogin = () => {
         createUserGithub()
-        .then(result=>{
-            const user =result.user;
-            console.log('login37',user)
-        }).catch(error=>{
-            console.error('error',error);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log('login37', user)
+                Swal.fire(
+                    'Good job!',
+                    'login success!',
+                    'success'
+                  )
+                 
+            }).catch(error => {
+                console.error('error', error);
+                const massage=error.message           
+                Swal.fire({
+                    title: 'Error!',
+                    text: massage,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+            })
     }
-    
-   
+
+
     return (
         <div >
             <Header />
             <Container>
                 <Form className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg" onSubmit={handelSubmit}>
+                  
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control  name='email' type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
+                        <Form.Control name='email' type="email" placeholder="Enter email" />
+
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -64,20 +106,20 @@ const Login = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
                     <Button className="w-100" variant="primary" type="submit">
-                      <ArrowRightIcon className='text-light me-2' style={{width:'30px',height:'30px'}} />   Login
+                        <ArrowRightIcon className='text-light me-2' style={{ width: '30px', height: '30px' }} />   Login
                     </Button>
-                    <br/>
-                    <Button  onClick={hadelGooleLogin}  
-                      className="mt-3 w-100" variant="danger"  >
-                    <FaGoogle className='me-4' />   Login with google
+                    <br />
+                    <Button onClick={hadelGooleLogin}
+                        className="mt-3 w-100" variant="danger"  >
+                        <FaGoogle className='me-4' />   Login with google
                     </Button>
-                    <br/>
+                    <br />
                     <Button onClick={handelGitLogin} className="mt-3 w-100" variant="dark">
-                      <FaGithub className='me-4'/>  Login with github
+                        <FaGithub className='me-4' />  Login with github
                     </Button>
-                    <br/>
+                    <br />
                     <Link to='/signup'>Are You New ? <span className='text-danger'>register first</span> </Link>
-                     <br/>
+                    <br />
                     <Link to='/resetpassword'>Forget password ? </Link>
                 </Form>
             </Container>
