@@ -10,28 +10,36 @@ export const userAuth = createContext()
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
+    const [loader,setLoader]=useState(true)
     const createUserEmail = (email, password) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password);
 
     }
     const logInWithEmail = (email, password) => {
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
     const logoutEmail = () => {
+        setLoader(true)
         return signOut(auth)
     }
     const createUserGoogle = () => {
+        setLoader(true)
         return signInWithPopup(auth, googleProvider);
     }
     const createUserGithub = () => {
+        setLoader(true)
         return signInWithPopup(auth, githuProvider);
     }
     const resetPassword = (email) => {
+        setLoader(true)
         return sendPasswordResetEmail(auth, email)
     }
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoader(false)
         });
         return () => unsubcribe();
 
@@ -45,6 +53,7 @@ const AuthProvider = ({ children }) => {
         createUserGoogle,
         createUserGithub,
         resetPassword,
+        loader,
     }
 
     return (

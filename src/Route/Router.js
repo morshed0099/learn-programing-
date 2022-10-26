@@ -9,6 +9,7 @@ import AllCourse from "../shere/AllCourse";
 import CourseDetails from "../shere/CourseDetails";
 import ResetPassword from "../shere/ResetPassword";
 import SelectCourse from "../shere/SelectCourse";
+import PrivateRoute from "./PrivateRoute";
 
 export const router=createBrowserRouter([
          {
@@ -20,7 +21,7 @@ export const router=createBrowserRouter([
             loader:({params})=>{
                return fetch(`http://localhost:5000/course/${params.id}`)
             },
-            element:<SelectCourse></SelectCourse>
+            element:<PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>
          },
          {
             path:'/login',

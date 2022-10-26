@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -12,6 +12,9 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
    const Swal =require('sweetalert2');
+   const navigate =useNavigate()
+   const location =useLocation()
+   const from = location.state?.from?.pathname || "/";
     const { logInWithEmail, createUserGoogle, createUserGithub } = useContext(userAuth)
     const handelSubmit = (event) => {
         event.preventDefault()
@@ -28,6 +31,7 @@ const Login = () => {
                     'success'
                   )
                   form.reset()
+                  navigate(from, { replace: true });
             }).catch(error => {
                 console.error('error', error)
                 const massage=error.message           
@@ -50,6 +54,7 @@ const Login = () => {
                     'login success!',
                     'success'
                   )
+                  navigate(from, { replace: true });
             }).catch(error => {
                 console.error('error', error);
                 const massage=error.message           
@@ -72,7 +77,7 @@ const Login = () => {
                     'login success!',
                     'success'
                   )
-                 
+                  navigate(from, { replace: true });
             }).catch(error => {
                 console.error('error', error);
                 const massage=error.message           
