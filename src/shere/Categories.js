@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Categories = () => {
@@ -16,7 +17,7 @@ const Categories = () => {
             <h4>All Category</h4>
               {
                 cat.map(category=><p key={category.id}>
-                    <Link to={`/course/${category.id}`}> {category.category_name}</Link>
+                    <Link to={`/details/${category.id}`}><Button className='w-100' variant='primary'> {category.category_name}</Button></Link>
                 </p>)
               }
             

@@ -31,7 +31,7 @@ const SelectCourse = () => {
                         <Card className='border shadow rounded'> 
                             <Card.Body>
                                 <Card.Title className='text-primary text-center'>You Select </Card.Title>
-                                <Card.Subtitle className="mb-2 text-center "> Course: <span className='text-warning'>{name}</span></Card.Subtitle>
+                                <Card.Subtitle className="mb-2 text-center "> Course: <span className='text-danger'>{name}</span></Card.Subtitle>
                                 <Card.Text>
                                     {description}
                                 </Card.Text>

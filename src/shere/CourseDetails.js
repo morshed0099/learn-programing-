@@ -34,8 +34,9 @@ const CourseDetails = () => {
             </Card>
                     </Col>
                     <Col lg="6">
-                        <h4 className='text-primary p-4 mb-4'>Way You Select This Course Play Video</h4>
+                        <h4 className='text-primary p-4 mb-4'>Whay You Select This Course Play Video</h4>
                         <YouTubePlayer
+                        className="w-100"
                          url='https://youtu.be/Rim14e5_Hwc?t=9'
                         >
                         </YouTubePlayer>
