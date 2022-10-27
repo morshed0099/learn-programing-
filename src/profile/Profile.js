@@ -22,7 +22,7 @@ const Profile = () => {
        }).then(()=>{
         Swal.fire(
             'Good job!',
-            'login success!',
+            'update success!',
             'success'
           )
        }).catch(error=>{
@@ -52,12 +52,7 @@ const Profile = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control defaultValue={user?.email} readOnly name='email' type="email" placeholder="Enter Your email" />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control name='password' type="password" placeholder="Password" />
-                    </Form.Group>
+                    </Form.Group>                   
                   
                     <Button variant="primary" className='w-100' type="submit">
                         Update
