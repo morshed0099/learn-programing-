@@ -32,10 +32,12 @@ const Header = () => {
 
       <Navbar bg="light" className="shadow mb-4 position-sticky top-0" expand="lg">
         <Container >
-          <Navbar.Brand href="#"><ComputerDesktopIcon
-            style={{ width: '40px', height: '40px' }}
-            className="text-primary me-2"
-          /> Learn Programing</Navbar.Brand>
+          <Link to='/'>
+            <Navbar.Brand href="#"><ComputerDesktopIcon
+              style={{ width: '40px', height: '40px' }}
+              className="text-primary me-2"
+            /> Learn Programing</Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className='ms-auto '>
