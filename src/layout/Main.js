@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Categories from '../shere/Categories';
+import Footer from '../shere/Footer';
 import Header from '../shere/Header';
 
 const Main = () => {
@@ -18,6 +19,7 @@ const Main = () => {
                     </Col>
                 </Row>
              </Container>
+             <Footer></Footer>
         </div>
     );
 };

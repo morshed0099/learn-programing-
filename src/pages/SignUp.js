@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
 import Swal from 'sweetalert2';
+import Footer from '../shere/Footer';
 
 const SignUp = () => {
     const Swal =require('sweetalert2');
@@ -68,6 +69,7 @@ const SignUp = () => {
                     <Link to='/login'>Alredy You Have an Accaunt ?<span className='text-danger'>login</span>  </Link>
                 </Form>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

@@ -8,12 +8,13 @@ import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import ReactTooltip from 'react-tooltip';
 import { ComputerDesktopIcon } from '@heroicons/react/24/solid'
-import React from "react";
+import React, { useState } from "react";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 
 const Header = () => {
 
-
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
   const { user } = useContext(userAuth);
   console.log('header14', user);
   const { logoutEmail } = useContext(userAuth);
@@ -43,11 +44,17 @@ const Header = () => {
               <Link className='me-4 mt-2' to='/blog'>Blogs</Link>
               <Link className='me-4 mt-2' to='/'>Home</Link>
               <Link className='me-4 mt-2' to='/faq'>FAQ</Link>
+              <DarkModeToggle
+                className='me-2 mt-2'
+                onChange={setIsDarkMode}
+                checked={isDarkMode}
+                size={60}
+              />
 
               {
                 user?.uid ?
                   <>
-                    <p className='mt-2 me-2'>{user.displayName}</p>
+
                     <ReactTooltip
                     />
 

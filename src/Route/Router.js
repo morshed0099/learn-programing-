@@ -9,7 +9,9 @@ import SignUp from '../pages/SignUp'
 import Profile from "../profile/Profile";
 import AllCourse from "../shere/AllCourse";
 import CourseDetails from "../shere/CourseDetails";
+import ErrorPage from "../shere/ErrorPage";
 import Faq from "../shere/Faq";
+import Footer from "../shere/Footer";
 import ResetPassword from "../shere/ResetPassword";
 import SelectCourse from "../shere/SelectCourse";
 import PrivateRoute from "./PrivateRoute";
@@ -17,8 +19,14 @@ import PrivateRoute from "./PrivateRoute";
 export const router=createBrowserRouter([
          {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            errorElement:<ErrorPage></ErrorPage>
+
          },
+         {
+           path:'/footer',
+           element:<Footer></Footer>
+         },       
          {
            path:'/profile',
            element:<Profile></Profile>
@@ -26,9 +34,10 @@ export const router=createBrowserRouter([
          {
             path:'/selectCourse/:id',
             loader:({params})=>{
-               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
-            },
-            element:<PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>
+               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)            },
+           
+            element:<PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>,
+            
          },
          {
             path:'/login',
@@ -60,9 +69,7 @@ export const router=createBrowserRouter([
                return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
             },
             element:<CourseDetails></CourseDetails>
-         },
-               
-
+         }, 
          {
             path:'/course',
             element:<Main></Main>,

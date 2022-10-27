@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import model from '../assests/image/model.jpg'
 import { Link } from 'react-router-dom';
 import YouTubePlayer from 'react-player/youtube';
+import Footer from '../shere/Footer';
 
 
 const Home = () => {
@@ -117,6 +118,7 @@ const Home = () => {
                     </div>
                 </main>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

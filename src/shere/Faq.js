@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import Footer from './Footer';
 import Header from './Header';
 
 
@@ -36,6 +37,7 @@ const Faq = () => {
                     </Accordion.Item>
                 </Accordion>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

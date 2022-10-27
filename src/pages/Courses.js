@@ -3,9 +3,11 @@ import { useLoaderData } from 'react-router-dom';
 import CategoryWiseCourse from '../shere/CategoryWiseCourse';
 
 
+
 const Courses = () => {
     const courses =useLoaderData();    
     return (
+       
         <div>           
            {
             courses.map((allcourse,idx) =><CategoryWiseCourse
@@ -14,7 +16,11 @@ const Courses = () => {
             >
             </CategoryWiseCourse>)
            }
+            
         </div>
+       
+        
+       
     );
 };
 

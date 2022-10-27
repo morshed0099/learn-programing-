@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { userAuth } from '../AuthProvider';
 import Header from '../shere/Header';
 import Swal from 'sweetalert2';
+import Footer from '../shere/Footer';
 
 const Profile = () => {
     const Swal =require('sweetalert2');
@@ -65,6 +66,7 @@ const Profile = () => {
                     
                 </Form>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

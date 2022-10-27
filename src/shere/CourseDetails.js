@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { Link, useLoaderData } from 'react-router-dom';
 import YouTubePlayer from 'react-player/youtube';
 import ReactToPrint from 'react-to-print';
+import Footer from './Footer';
 
 const CourseDetails = () => {
     const detailsCourse = useLoaderData()
@@ -48,6 +49,7 @@ const CourseDetails = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 };
