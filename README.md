@@ -1,4 +1,4 @@
-#This project besicaly for build lean programing free
+#This project besicaly for build learn programing free
 
 #Useages Framewok and Librelibrary
 1.Booststrap using for desging.
