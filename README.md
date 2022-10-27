@@ -1,3 +1,32 @@
+#This project besicaly for build learn programing free
+
+#Useages Framewok and Librelibrary
+1.Booststrap using for desging.
+2.use react icon for icon 
+3.use hero  icon for icon
+4.use react bootstrap
+5.for login system use firebase link (https://firebase.google.com/docs/hosting/)
+
+#Hosting 
+1. for clint side hosting useing firebase link (https://learn-programing-cbb02.web.app/)
+2. for server side hosting useing vercel 
+
+#using hook 
+1.router hook for route.
+2.navite hook .
+3.useRef for pdf download.
+4.useLocation 
+5.useLoder
+6.useEfect
+7.useState
+
+#private route
+1.use private route for couse enroll 
+
+Thank you for reading this side will be updated as it need 
+.............note:this is first verson ...........
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
