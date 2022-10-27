@@ -15,8 +15,7 @@ const Profile = () => {
        event.preventDefault()
        const form =event.target;
        const dispalyName=form.name.value;
-       const photoURL=form.photoURL.value;
-       const password=form.password.value;
+       const photoURL=form.photoURL.value;       
        updateProfile(auth.currentUser,{
         displayName:dispalyName,photoURL:photoURL        
        }).then(()=>{
@@ -52,13 +51,16 @@ const Profile = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control defaultValue={user?.email} readOnly name='email' type="email" placeholder="Enter Your email" />
-                    </Form.Group>                   
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Your uid</Form.Label>
+                        <Form.Control readOnly defaultValue={user?.uid} name='uid' type="text"  />
+                    </Form.Group>
                   
                     <Button variant="primary" className='w-100' type="submit">
                         Update
-                    </Button>
-                    <br />
-                    
+                    </Button>                    
                 </Form>
             </Container>
             <Footer></Footer>
