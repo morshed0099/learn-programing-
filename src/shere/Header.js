@@ -42,7 +42,8 @@ const Header = () => {
               <Link to='/course' className='me-4 mt-2'>Course</Link>
               <Link className='me-4 mt-2' to='/blog'>Blogs</Link>
               <Link className='me-4 mt-2' to='/'>Home</Link>
-            
+              <Link className='me-4 mt-2' to='/faq'>FAQ</Link>
+
               {
                 user?.uid ?
                   <>
@@ -50,17 +51,18 @@ const Header = () => {
                     <ReactTooltip
                     />
 
-                    <img src={user?.photoURL}
-                      data-tip={user?.displayName}
-                      className='rounded-circle me-2 mb-4 mb-lg-0'
-                      style={{ width: '40px', height: '40px' }}
-                      alt="" />
+                    <Link to='/profile'>
+                      <img src={user?.photoURL}
+                        data-tip={user?.displayName}
+                        className='rounded-circle me-2 mb-4 mb-lg-0'
+                        style={{ width: '40px', height: '40px' }}
+                        alt="" />
+                    </Link>
                     <Button onClick={handelLogOut} className='me-2' varient='primary'>Log Out</Button>
                   </>
                   :
                   <>
                     <Link className='me-4 mt-2' to='/login'>Login</Link>
-                    <Link className='me-4 mt-2' to='/signup'>SignUp</Link>
                   </>
               }
             </Nav>

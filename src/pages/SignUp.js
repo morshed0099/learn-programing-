@@ -13,11 +13,11 @@ const SignUp = () => {
     const handelSubmit = (event) => {
         event.preventDefault()
         const form = event.target;
-        const name = form.name.value;
-        const phoURL = form.photoURL.value;
+        const displayName = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
-        const password = form.password.value;
-        createUserEmail(email, password)
+        const password = form.password.value;       
+        createUserEmail(email,password)
             .then(result => {
                 const user = result.user;
                 console.log('login18', user);
@@ -25,8 +25,7 @@ const SignUp = () => {
                     'Good job!',
                     'signUP success!',
                     'success'
-                  )
-                  form.reset()
+                  )               
             }).catch(error => {
                 console.error('error', error);
                 const massage=error.message           
@@ -61,9 +60,7 @@ const SignUp = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control name='password' type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+                   
                     <Button variant="primary" className='w-100' type="submit">
                         Sign Up
                     </Button>

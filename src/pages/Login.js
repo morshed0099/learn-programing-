@@ -107,9 +107,7 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control name='password' type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+                 
                     <Button className="w-100" variant="primary" type="submit">
                         <ArrowRightIcon className='text-light me-2' style={{ width: '30px', height: '30px' }} />   Login
                     </Button>

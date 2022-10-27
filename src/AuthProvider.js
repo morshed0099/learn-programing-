@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from './firebase/firebase.init';
 
 const auth = getAuth(app)
@@ -11,14 +11,16 @@ export const userAuth = createContext()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
     const [loader,setLoader]=useState(true)
-    const createUserEmail = (email, password) => {
-        setLoader(true)
-        return createUserWithEmailAndPassword(auth, email, password);
 
+    const createUserEmail=(email,password)=>{
+        return createUserWithEmailAndPassword(auth,email,password)
     }
+   
+
+    
     const logInWithEmail = (email, password) => {
         setLoader(true)
-        return signInWithEmailAndPassword(auth, email, password);
+        return signInWithEmailAndPassword(auth, email,password);
     }
     const logoutEmail = () => {
         setLoader(true)
@@ -36,24 +38,28 @@ const AuthProvider = ({ children }) => {
         setLoader(true)
         return sendPasswordResetEmail(auth, email)
     }
+   
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoader(false)
+            
         });
         return () => unsubcribe();
 
     }, [])
+  
     // const user={displayName:""}
     const userInfo = {
-        user,
-        createUserEmail,
+        user,        
         logInWithEmail,
         logoutEmail,
         createUserGoogle,
         createUserGithub,
         resetPassword,
+        createUserEmail,
         loader,
+        auth,
     }
 
     return (

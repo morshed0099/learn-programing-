@@ -1,3 +1,4 @@
+
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Blogs from "../pages/Blogs";
@@ -5,8 +6,10 @@ import Courses from "../pages/Courses";
 import Home from "../pages/Home";
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
+import Profile from "../profile/Profile";
 import AllCourse from "../shere/AllCourse";
 import CourseDetails from "../shere/CourseDetails";
+import Faq from "../shere/Faq";
 import ResetPassword from "../shere/ResetPassword";
 import SelectCourse from "../shere/SelectCourse";
 import PrivateRoute from "./PrivateRoute";
@@ -17,9 +20,13 @@ export const router=createBrowserRouter([
             element:<Home></Home>
          },
          {
+           path:'/profile',
+           element:<Profile></Profile>
+         },
+         {
             path:'/selectCourse/:id',
             loader:({params})=>{
-               return fetch(`http://localhost:5000/course/${params.id}`)
+               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
             },
             element:<PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>
          },
@@ -42,9 +49,15 @@ export const router=createBrowserRouter([
 
          },
          {
+            path:'/faq',
+            element:<Faq></Faq>
+
+         },
+         
+         {
             path:'/details/:id',
             loader:({params})=>{
-               return fetch(`http://localhost:5000/course/${params.id}`)
+               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
             },
             element:<CourseDetails></CourseDetails>
          },
@@ -57,14 +70,14 @@ export const router=createBrowserRouter([
                 {
                     path:'/course',
                     loader:()=>{
-                     return fetch('http://localhost:5000/courses')
+                     return fetch('https://learn-programin-server.vercel.app/courses')
                     },
                     element:<Courses></Courses>
                 },
                 {
                   path:'/course/:id',
                   loader:({params})=>{
-                       return fetch(`http://localhost:5000/category/${params.id}`)
+                       return fetch(`https://learn-programin-server.vercel.app/category/${params.id}`)
                   },
                   element:<AllCourse></AllCourse>
                  },

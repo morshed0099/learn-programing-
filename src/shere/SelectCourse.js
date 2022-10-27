@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {  useLoaderData } from 'react-router-dom';
 import Header from './Header';
 import Card from 'react-bootstrap/Card';
@@ -6,10 +6,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
+import { userAuth } from '../AuthProvider';
 
 
 const SelectCourse = () => {
     const Swal =require('sweetalert2');
+    const {user}=useContext(userAuth);
     const select = useLoaderData();
     const { name, description } = select;
     const handelConfirm=(event)=>{
@@ -47,7 +49,7 @@ const SelectCourse = () => {
                             <Form onSubmit={handelConfirm} className="border w-75 mx-auto shadow p-3 mt-3 rounded-3">
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Name</Form.Label>
-                                    <Form.Control name='name' type="text" placeholder="Enter Your Name" required/>
+                                    <Form.Control name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Enter Your Name" required/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Phone Number</Form.Label>
@@ -55,7 +57,7 @@ const SelectCourse = () => {
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control name='email' type="email" placeholder="Enter Your email" required />
+                                    <Form.Control name='email' defaultValue={user?.email} readOnly type="email" placeholder="Enter Your email" required />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
