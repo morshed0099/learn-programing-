@@ -13,7 +13,7 @@ const Categories = () => {
     },[])
    console.log(cat);
     return (
-        <div style={{position:'sticky',top:"90px"}}>
+        <div style={{position:'sticky',top:"95px"}}>
             <h4>All Category</h4>
               {
                 cat.map(category=><p key={category.id}>

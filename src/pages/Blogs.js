@@ -14,7 +14,7 @@ const Blogs = () => {
             <Container >
                 <Row xs={1} md={2} className="g-4 mt-5  mb-5">
                     <Col>
-                        <Card className='shadow rounded' style={{hetiht:'520px'}}>
+                        <Card className='shadow rounded' style={{height:'650px'}}>
                             <Card.Img src={cors} style={{ width: '80%', height: '350px' }} className="mx-auto mt-5" variant="top" />
                             <Card.Body style={{height:'220px'}}>
                                 <Card.Title>what is cors?</Card.Title>
@@ -25,11 +25,11 @@ const Blogs = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card className='shadow rounded' style={{hetiht:'520px'}}>
+                        <Card className='shadow rounded' style={{height:'650px'}}>
                             <Card.Img src={firebase} style={{ width: '80%', height: '350px' }} className="mx-auto mt-5" variant="top" />
                             <Card.Body style={{height:'220px'}}>
                                 <Card.Title> Why are you using firebase? What other options do you have to implement authentication?</Card.Title>
-                                <Card.Text>
+                                <Card.Text className='mb-3'>
                                 Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more
                                 other option:
                                 1:Auth0, 2:MongoDB, 3:Passport, 4:Okta,
@@ -39,7 +39,7 @@ const Blogs = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card className='shadow rounded' style={{hetiht:'520px'}}>
+                        <Card className='shadow rounded' style={{height:'650px'}}>
                             <Card.Img src={privateRoute} style={{ width: '80%', height: '350px' }} className="mx-auto mt-5" variant="top" />
                             <Card.Body style={{height:'220px'}}>
                                 <Card.Title>How does the private route work?</Card.Title>
@@ -55,7 +55,7 @@ const Blogs = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card className='shadow rounded' style={{hetiht:'300px'}}>
+                        <Card className='shadow rounded' style={{height:'650px'}}>
                             <Card.Img src={node} style={{ width: '80%', height: '350px'}} className="mx-auto mt-5" variant="top" />
                             <Card.Body style={{height:'220px'}} >
                                 <Card.Title>What is Node? How does Node work?</Card.Title>

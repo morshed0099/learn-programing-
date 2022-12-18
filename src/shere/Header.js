@@ -8,13 +8,14 @@ import { Link } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import ReactTooltip from 'react-tooltip';
 import { ComputerDesktopIcon } from '@heroicons/react/24/solid'
-import React, { useState } from "react";
-import DarkModeToggle from "react-dark-mode-toggle";
+import React from "react";
+
+import ScrollToTop from '../Hooks/ScrollTop';
 
 
 const Header = () => {
 
-  const [isDarkMode, setIsDarkMode] = useState(() => false);
+
   const { user } = useContext(userAuth);
   console.log('header14', user);
   const { logoutEmail } = useContext(userAuth);
@@ -40,41 +41,38 @@ const Header = () => {
           </Link>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav className='ms-auto '>
+           <ScrollToTop>
+           <Nav className='ms-auto '>
 
-              <Link to='/course' className='me-4 mt-2'>Course</Link>
-              <Link className='me-4 mt-2' to='/blog'>Blogs</Link>
-              <Link className='me-4 mt-2' to='/'>Home</Link>
-              <Link className='me-4 mt-2' to='/faq'>FAQ</Link>
-              <DarkModeToggle
-                className='me-2 mt-2'
-                onChange={setIsDarkMode}
-                checked={isDarkMode}
-                size={60}
-              />
+<Link to='/course' className='me-4 mt-2'>Course</Link>
+<Link className='me-4 mt-2' to='/blog'>Blogs</Link>
+<Link className='me-4 mt-2' to='/'>Home</Link>
+<Link className='me-4 mt-2' to='/faq'>FAQ</Link>
 
-              {
-                user?.uid ?
-                  <>
 
-                    <ReactTooltip
-                    />
+{
+  user?.uid ?
+    <>
 
-                    <Link to='/profile'>
-                      <img src={user?.photoURL}
-                        data-tip={user?.displayName}
-                        className='rounded-circle me-2 mb-4 mb-lg-0'
-                        style={{ width: '40px', height: '40px' }}
-                        alt="" />
-                    </Link>
-                    <Button onClick={handelLogOut} className='me-2' varient='primary'>Log Out</Button>
-                  </>
-                  :
-                  <>
-                    <Link className='me-4 mt-2' to='/login'>Login</Link>
-                  </>
-              }
-            </Nav>
+      <ReactTooltip
+      />
+
+      <Link to='/profile'>
+        <img src={user?.photoURL}
+          data-tip={user?.displayName}
+          className='rounded-circle me-2 mb-4 mb-lg-0'
+          style={{ width: '40px', height: '40px' }}
+          alt="" />
+      </Link>
+      <Button onClick={handelLogOut} className='me-2' varient='primary'>Log Out</Button>
+    </>
+    :
+    <>
+      <Link className='me-4 mt-2' to='/login'>Login</Link>
+    </>
+}
+</Nav>
+           </ScrollToTop>
 
           </Navbar.Collapse>
         </Container>
