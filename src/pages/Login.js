@@ -96,7 +96,7 @@ const Login = () => {
         <div >
             <Header />
             <Container>
-                <Form className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg" onSubmit={handelSubmit}>
+                <Form style={{maxWidth:"400PX"}} className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg" onSubmit={handelSubmit}>
                   
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

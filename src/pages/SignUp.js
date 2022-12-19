@@ -43,7 +43,7 @@ const SignUp = () => {
         <div>
             <Header></Header>
             <Container>
-                <Form className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
+                <Form style={{maxWidth:"400PX"}} className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
                         <Form.Control name='name' type="text" placeholder="Enter Your Name" />
