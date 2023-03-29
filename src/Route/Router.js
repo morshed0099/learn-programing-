@@ -1,5 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
+import HomeLayout from "../layout/HomeLayout";
 import Main from "../layout/Main";
 import Blogs from "../pages/Blogs";
 import Courses from "../pages/Courses";
@@ -11,86 +12,98 @@ import AllCourse from "../shere/AllCourse";
 import CourseDetails from "../shere/CourseDetails";
 import ErrorPage from "../shere/ErrorPage";
 import Faq from "../shere/Faq";
-import Footer from "../shere/Footer";
 import ResetPassword from "../shere/ResetPassword";
 import SelectCourse from "../shere/SelectCourse";
 import PrivateRoute from "./PrivateRoute";
 
-export const router=createBrowserRouter([
+export const router = createBrowserRouter([
+   {
+      path: '/',
+      element: <HomeLayout></HomeLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
+      children: [
          {
-            path:'/',
-            element:<Home></Home>,
-            errorElement:<ErrorPage></ErrorPage>
+            path: '/',
+            element: <Home />
 
          },
          {
-           path:'/footer',
-           element:<Footer></Footer>
-         },       
-         {
-           path:'/profile',
-           element:<Profile></Profile>
-         },
-         {
-            path:'/selectCourse/:id',
-            loader:({params})=>{
-               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)            },
-           
-            element:<PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>,
-            
-         },
-         {
-            path:'/login',
-            element:<Login></Login>
-         },
-         {
-            path:'/signup',
-            element:<SignUp></SignUp>
-         },
-         {
-            path:'/blog',
-            element:<Blogs></Blogs>
+            path: '/home',
+            element: <Home />
 
          },
-         {
-            path:'resetpassword',
-            element:<ResetPassword></ResetPassword>
 
+         {
+            path: '/profile',
+            element: <Profile></Profile>
          },
          {
-            path:'/faq',
-            element:<Faq></Faq>
-
-         },
-         
-         {
-            path:'/details/:id',
-            loader:({params})=>{
+            path: '/selectCourse/:id',
+            loader: ({ params }) => {
                return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
             },
-            element:<CourseDetails></CourseDetails>
-         }, 
+
+            element: <PrivateRoute><SelectCourse></SelectCourse></PrivateRoute>,
+
+         },
          {
-            path:'/course',
-            element:<Main></Main>,
-            children:[
-                {
-                    path:'/course',
-                    loader:()=>{
-                     return fetch('https://learn-programin-server.vercel.app/courses')
-                    },
-                    element:<Courses></Courses>
-                },
-                {
-                  path:'/course/:id',
-                  loader:({params})=>{
-                       return fetch(`https://learn-programin-server.vercel.app/category/${params.id}`)
-                  },
-                  element:<AllCourse></AllCourse>
-                 },
-                 
-                
-            ]          
-                
-         }
+            path: '/login',
+            element: <Login></Login>
+         },
+         {
+            path: '/signup',
+            element: <SignUp></SignUp>
+         },
+         {
+            path: '/blog',
+            element: <Blogs></Blogs>
+
+         },
+         {
+            path: 'resetpassword',
+            element: <ResetPassword></ResetPassword>
+
+         },
+         {
+            path: '/faq',
+            element: <Faq></Faq>
+
+         },
+
+         {
+            path: '/details/:id',
+            loader: ({ params }) => {
+               return fetch(`https://learn-programin-server.vercel.app/course/${params.id}`)
+            },
+            element: <CourseDetails></CourseDetails>
+         },
+      ]
+   },
+
+   {
+      path: '/course',
+      loader: () => {
+         return fetch('https://learn-programin-server.vercel.app/courses')
+      },
+      element: <Main></Main>,
+      children: [
+         {
+            path: '/course',
+            loader: () => {
+               return fetch('https://learn-programin-server.vercel.app/courses')
+            },
+            element: <Courses></Courses>
+         },
+         {
+            path: '/course/:id',
+            loader: ({ params }) => {
+               return fetch(`https://learn-programin-server.vercel.app/category/${params.id}`)
+            },
+            element: <AllCourse></AllCourse>
+         },
+
+
+      ]
+
+   }
 ])

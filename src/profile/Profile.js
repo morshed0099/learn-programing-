@@ -37,7 +37,7 @@ const Profile = () => {
     }
     return (
         <div>
-            <Header></Header>
+           
             <Container>            
                 <Form className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -63,7 +63,7 @@ const Profile = () => {
                     </Button>                    
                 </Form>
             </Container>
-            <Footer></Footer>
+           
         </div>
     );
 };

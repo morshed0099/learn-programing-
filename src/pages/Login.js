@@ -4,11 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
-import Header from '../shere/Header';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import Swal from 'sweetalert2';
-import Footer from '../shere/Footer';
+
+
 
 
 const Login = () => {
@@ -94,7 +93,7 @@ const Login = () => {
 
     return (
         <div >
-            <Header />
+        
             <Container>
                 <Form style={{maxWidth:"400PX"}} className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg" onSubmit={handelSubmit}>
                   
@@ -127,7 +126,7 @@ const Login = () => {
                     <Link to='/resetpassword'>Forget password ? </Link>
                 </Form>
             </Container>
-            <Footer></Footer>
+           
         </div>
     );
 };

@@ -41,7 +41,7 @@ const SignUp = () => {
     }
     return (
         <div>
-            <Header></Header>
+            
             <Container>
                 <Form style={{maxWidth:"400PX"}} className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -68,8 +68,7 @@ const SignUp = () => {
                     <br />
                     <Link to='/login'>Alredy You Have an Accaunt ?<span className='text-danger'>login</span>  </Link>
                 </Form>
-            </Container>
-            <Footer></Footer>
+            </Container>            
         </div>
     );
 };

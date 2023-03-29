@@ -26,8 +26,7 @@ const SelectCourse = () => {
         form.reset()
     }
     return (
-        <div>
-            <Header></Header>
+        <div>           
             <Container>
                 <Row>
                     <Col lg='6'>

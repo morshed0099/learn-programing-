@@ -1,124 +1,169 @@
-import React from 'react';
-import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
-import Header from '../shere/Header';
-import employer from '../assests/image/employer.svg';
-import startup from '../assests/image/startup.svg';
-import web from '../assests/image/web.svg'
-import Card from 'react-bootstrap/Card';
-import model from '../assests/image/model.jpg'
-import { Link } from 'react-router-dom';
-import YouTubePlayer from 'react-player/youtube';
-import Footer from '../shere/Footer';
+import React, { useState } from 'react';
+import { AcademicCapIcon, ChartBarIcon, ChatBubbleLeftRightIcon, GlobeEuropeAfricaIcon } from '@heroicons/react/24/solid';
+import { Container } from 'react-bootstrap';
+import roket from '../assests/image/animation_500_ldsj2qjf.gif'
+import { FaSchool, FaCertificate, FaLaptop } from 'react-icons/fa'
+import { FcOnlineSupport } from 'react-icons/fc'
+import { TbMathSymbols } from 'react-icons/tb'
+import Carosal from '../shere/Carosal';
+import Testomonial from './Testomonial';
+import AboutSocial from './AboutSocial';
+
+
+
 
 
 const Home = () => {
+    const [actvieRoute, setActiveRoute] = useState("join")
+
+    console.log(actvieRoute);
     return (
         <div>
-            <Header></Header>
             <Container>
-                <header className='mb-5'>
-                    <Carousel className='bg-dark p-5 rounded text-white'>
-                        <Carousel.Item>
-                            <Container>
-                                <Row className="d-block w-100 h-100 d-flex">
-                                    <Col lg='6'>
-                                        <img src={employer} className='h-100' alt="" />
-                                    </Col>
-                                    <Col lg='6' className='text-center mt-5'>
-                                        <h1>Progaming is fun and dedication</h1>
-                                        <h4>if you wanted to reach your dream goal
-                                            whay wait join with us
-                                        </h4>
-                                        <Link to='/course'><Button className='mt-4' varient='primary'>Get Started</Button></Link>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Container>
-                                <Row className="d-block w-100 h-100 d-flex">
-                                    <Col lg='6'>
-                                        <img src={web} className='h-100' alt="" />
-                                    </Col>
-                                    <Col lg='6' className='text-center mt-5'>
-                                        <h1>Progaming is fun and dedication</h1>
-                                        <h4>if you wanted to reach your dream goal
-                                            whay wait join with us
-                                        </h4>
-                                        <Link to='/course'><Button className='mt-4' varient='primary'>Get Started</Button></Link>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Container>
-                                <Row className="d-block w-100 h-100 d-flex">
-                                    <Col lg='6'>
-                                        <img src={startup} className='h-100' alt="" />
-                                    </Col>
-                                    <Col lg='6' className='text-center mt-5'>
-                                        <h1>Progaming is fun and dedication</h1>
-                                        <h4>if you wanted to reach your dream goal
-                                            whay wait join with us
-                                        </h4>
-
-                                        <Link to='/course'><Button className='mt-4' varient='primary'>Get Started</Button></Link>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Carousel.Item>
-                    </Carousel>
-                </header>
-                <main className='mt-5'>
-                    <h1>Meet Our <span className='text-primary text-decoration-underline'>Team Member</span></h1>
-                    <Row xs={1} md={2} className="g-4 mt-5 ">
-                        {Array.from({ length: 4 }).map((_, idx) => (
-                            <Col>
-                                <Card className='shadow rounded'>
-                                    <Card.Img style={{ width: '80%', height: '350px' }} className="mx-auto mt-5" variant="top" src={model} />
-                                    <Card.Body>
-                                        <Card.Title>Web Instuctor</Card.Title>
-                                        <Card.Text>
-                                            He is a good man and very
-                                            fiendly and very opne minded he i also good teacher
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
-                    <div className='mb-5 mt-5'>
-                        <h3>watch this video our guru tell you what is the way to be a web developer</h3>
-                        <div className='mx-auto '>
-                            <YouTubePlayer  
-                             className="w-75 mx-auto mt-5"                             
-                                url='https://youtu.be/XQ_0Zacb1_4?t=10'
-                            >
-                            </YouTubePlayer>
+                <div>
+                    <Carosal />
+                </div>
+                <section className='commonQuestion bg-light shadow-lg mb-5 rounded'>
+                    <div className='p-2 border rounded-pill mt-4 mb-4'>
+                        <div className='d-flex p-2 justify-content-start align-items-center gap-2 borders '>
+                            <button onClick={() => setActiveRoute('join')} className={`btn  btn-sm btn-outline-primary ${actvieRoute === "join" && "btn btn-primary text-white"}`}>WHO CAN JOIN</button>
+                            <button onClick={() => setActiveRoute('shedule')} className={`btn btn-sm btn-outline-primary ${actvieRoute === "shedule" && "btn btn-primary text-white"}`}>CLASS SHEDULE</button>
+                            <button onClick={() => setActiveRoute('benifit')} className={`btn btn-sm btn-outline-primary ${actvieRoute === "benifit" && "btn btn-primary text-white"}`}>BENIFIT</button>
                         </div>
                     </div>
-                    <div className='mt-5'>
-                        <h1 className='text-cente'>Meet Our <span className='text-danger text-decoration-underline'>Successfull Student</span></h1>
-                        <Row xs={1} md={2} className="g-4 mt-5 ">
-                            {Array.from({ length: 4 }).map((_, idx) => (
-                                <Col>
-                                    <Card className='shadow rounded'>
-                                        <Card.Img style={{ width: '80%', height: '350px' }} className="mx-auto mt-5" variant="top" src={model} />
-                                        <Card.Body>
-                                            <Card.Title>Web Instuctor</Card.Title>
-                                            <Card.Text>
-                                                He is a good man and very
-                                                fiendly and very opne minded he i also good teacher
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            ))}
-                        </Row>
+                    <div className='p-4'>
+                        {
+                            actvieRoute === "join" && 
+                            <div className='position-relative'>
+                                 <div className='backgorund-light'></div>
+                                <p className='fs-4'>
+                                    <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: 12 class sutuden can join
+                                </p>
+                                <p className='fs-4'>
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                </p>
+                                <p className='fs-4'>
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                </p>
+                            </div>
+                        }
+                        {
+                            actvieRoute === "shedule" && 
+                            <div  className='position-relative'>
+                                 <div className='backgorund-light'></div>
+                                <p className='fs-4'>
+                                    <span><FcOnlineSupport className='text-primary' /></span> <b>Suppet</b>: 24/7 support
+                                </p>
+                                <p className='fs-4'>
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                </p>
+                                <p className='fs-4'>
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                </p>
+                            </div>
+                        }
+                        {
+                            actvieRoute === "benifit" &&
+                             <div className='position-relative'>
+                                <div className='backgorund-light'></div>
+                                <p className='fs-4'>
+                                    <span><FaCertificate className='text-primary' /></span> <b>Certificate</b>: We provided World class certificate
+                                </p>
+                                <p className='fs-4'>
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                </p>
+                                <p className='fs-4'>
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                </p>
+                            </div>
+                        }
                     </div>
-                </main>
+
+                </section>              
+                <section>
+                    <AboutSocial />
+                </section>
+                <section >
+                    <div className="header-bannar position-relative">
+                        <div className='backgorund-white'></div>
+                        <svg class="backgroun-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f0ffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+
+                        <div className='text-center mt-4 mb-4'>
+                            <h1 className='text-white bal fs-1 fw-bold lh-1'>Became a <span className='text-header'>Developer</span> To Get Dream Job</h1>
+                            <p className='text-white  fs-5'>Wake up Join us</p>
+
+                        </div>
+                        <div className='row p-5 ms-5 '>
+                            <div className=' IconSection  col-12 col-lg-6'>
+                                <div className='row' >
+                                    <div className='col-12 col-md-6'>
+                                        <div>
+                                            <span className='d-flex align-items-center me-2'>
+                                                <ChartBarIcon style={{ width: "80px", height: "80px", color: "white" }} />
+                                                <p className='text-white  fs-5'>First Growing </p>
+                                            </span>
+                                            <span className='d-flex align-items-center me-2'>
+                                                <GlobeEuropeAfricaIcon style={{ width: "80px", height: "80px", color: "white" }} />
+                                                <p className='text-white  fs-5'>Worldwide Chance</p>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                    <div className='col-12 col-md-6'>
+                                        <div>
+                                            <span className='d-flex align-items-center'>
+                                                <ChatBubbleLeftRightIcon style={{ width: "80px", height: "80px", color: "white" }} />
+                                                <p className='text-white  fs-5 ms-2'>Unlimited Support</p>
+                                            </span>
+                                            <span className='d-flex align-items-center '>
+                                                <AcademicCapIcon style={{ width: "80px", height: "80px", color: "white" }} />
+                                                <p className='text-white  fs-5 ms-2'>Get Certificate</p>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <button style={{ width: '300px' }} className='px-5 mt-4 ms-2 ms-md-5 join-button shadow-lg py-2 rounded fs-4 fw-bold border-0'>Join Us</button>
+
+                                </div>
+                            </div>
+
+                            <div className='col-12 col-lg-6'>
+                                <img src={roket} alt="" />
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                </section>
+                <section>
+                    <h2 className='text-center mt-5 mb-2'>Meet Our Team</h2>
+                    <Testomonial />
+                </section>
+
+                {/* <section style={{
+                    position: "relative",
+                    backgroundImage: `url("https://th.bing.com/th/id/OIP.2fIWi9po22t63qXxltVYqwHaEK?pid=ImgDet&w=553&h=311&rs=1")`,
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    width: "100%",
+                    backgroundSize: "cover",
+                    height: "60vh",
+                }} className='more-info'>
+                    <div className='overlay  position-absolute'></div>
+                    <div className='image-text position-absolute'>
+                        <div className="text-white text-center p-4">
+                            <h4>Why You Join With Us</h4>
+                            <p>Your journey will be very smooth.You will achive success</p>
+                            <p>We Provide World Class Tutorial</p>
+                            <p>Join us we care every student .We have stong team </p>
+
+                        </div>
+                    </div>
+
+                </section> */}
             </Container>
-            <Footer></Footer>
+
         </div>
     );
 };

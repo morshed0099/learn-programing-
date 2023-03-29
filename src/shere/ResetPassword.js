@@ -37,7 +37,7 @@ const ResetPassword = () => {
 
     return (
         <div>
-            <Header></Header>
+   
             <Container>
                 <Form onSubmit={handelSubmit} className="border w-75 mx-auto  rounded-3 shadow p-3 mt-3 rounded-lg">
                     <Form.Group className="mb-3" controlId="formBasicEmail">

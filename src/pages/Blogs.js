@@ -9,8 +9,7 @@ import Footer from '../shere/Footer';
 
 const Blogs = () => {
     return (
-        <div>
-            <Header></Header>
+        <div>       
             <Container >
                 <Row xs={1} md={2} className="g-4 mt-5  mb-5">
                     <Col>
@@ -67,7 +66,7 @@ const Blogs = () => {
                     </Col>
                 </Row>
             </Container>
-            <Footer></Footer>
+           
         </div>
     );
 };

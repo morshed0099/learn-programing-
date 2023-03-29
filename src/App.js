@@ -7,7 +7,7 @@ import { RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className='bodyColor'>
       <RouterProvider router={router}>
       </RouterProvider>
     </div>
