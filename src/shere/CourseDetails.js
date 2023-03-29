@@ -14,7 +14,7 @@ const CourseDetails = () => {
     const { name, description, duration, video_length, assignment, price, id, image } = detailsCourse
     return (
         <div>
-            <Header></Header>
+          
             <Container>
                 <Row>
                     <Col lg="6" className='mb-4 shadow p-2'>
@@ -49,7 +49,7 @@ const CourseDetails = () => {
                     </Col>
                 </Row>
             </Container>
-            <Footer />
+           
         </div>
     );
 };
