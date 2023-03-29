@@ -126,6 +126,19 @@
 .text-gray{
   color:gray;
 }
+.sliderImage{
+  object-fit: cover;
+}
+.carousel-indicators [data-bs-target]{
+  background-color: #010fa2 !important;
+}
+
+.start{
+color: goldenrod;
+}
+.halfStar{
+  color: goldenrod;
+}
 
 /* .main-testimonial:hover .d-title {
   display: none;

@@ -9,6 +9,9 @@ import Carosal from '../shere/Carosal';
 import Testomonial from './Testomonial';
 import AboutSocial from './AboutSocial';
 import { useNavigate } from 'react-router-dom';
+import TrustedCompany from './TrustedCompany';
+import MeetSuccessStudent from './MeetSuccessStudent';
+import Exprerience from './Exprerience';
 
 
 
@@ -28,6 +31,7 @@ const Home = () => {
                 <div>
                     <Carosal />
                 </div>
+                <h2 className='mt-5 mb-2 text-center'>Frequently Asked Questions</h2>
                 <section className='commonQuestion bg-light shadow-lg mb-5 rounded'>
                     <div className='p-2 border rounded-pill mt-4 mb-4'>
                         <div className='d-flex p-2 justify-content-start align-items-center gap-2 borders '>
@@ -37,12 +41,13 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='p-4'>
+
                         {
                             actvieRoute === "join" &&
                             <div className='position-relative'>
                                 <div className='backgorund-light'></div>
                                 <p className='fs-4'>
-                                    <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: <span className='text-gray'>12 Class StudenT can join.</span>
+                                    <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: <span className='text-gray'>12th Class StudenT can join.</span>
                                 </p>
                                 <p className='fs-4'>
                                     <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : <span className='text-gray'>Besic Math Experience needed.</span>
@@ -142,7 +147,7 @@ const Home = () => {
                     </div>
                 </section>
                 <section>
-                    <h2 className='text-center mt-5 mb-2'>Meet Our Team</h2>
+                    <h2 className='text-center mt-5 mb-5'>Meet Our Team Member's</h2>
                     <Testomonial />
                 </section>
 
@@ -167,6 +172,25 @@ const Home = () => {
                     </div>
 
                 </section> */}
+                <section className='mb-3'>
+                    <h2 className='text-bold text-center mt-5 mb-4'>Meet Our Successfull
+                        Students</h2>
+                    <MeetSuccessStudent />
+                </section>
+                <section className='mt-5'>
+                    <h2 className="text-center">
+                        Some Students Feedback
+                    </h2>
+                    <p className='text-gray text-justify text-center mb-4'>
+                        Why you can jonin withou why we are the best explore it by read feadback
+                        if you want to do something you can join with us
+                    </p>
+                    <Exprerience />
+                </section>
+                <section className='mt-5 mb-4'>
+                    <h2 className='text-bold  d-lg-block d-none text-center'>Trusted by over 800+ companies</h2>
+                    <TrustedCompany />
+                </section>
             </Container>
 
         </div>

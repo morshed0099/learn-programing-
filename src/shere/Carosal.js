@@ -18,8 +18,10 @@ const Carosal = () => {
                             <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
-                            className=" w-100"
-                            src="https://th.bing.com/th?id=ORMS.2a67f8bf5d9ba6f715f568bcc47554b4&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0"
+                            height='600px'
+                            width="100%"
+                            className='sliderImage' 
+                            src="https://astonishing-sprinkles-4c4f79.netlify.app/images/cover/undergrad-hero-option-2.jpg"
                             alt="Third slide"
                         />
                     </div>
@@ -34,8 +36,10 @@ const Carosal = () => {
                             <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
-                            className=" w-100"
-                            src="https://th.bing.com/th?id=ORMS.2a67f8bf5d9ba6f715f568bcc47554b4&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0"
+                            height='600px'
+                            width="100%"
+                            className='sliderImage'                            
+                            src="https://astonishing-sprinkles-4c4f79.netlify.app/images/cover/cover-1.png"
                             alt="Third slide"
                         />
                     </div>
@@ -50,8 +54,10 @@ const Carosal = () => {
                             <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
-                            className=" w-100"
-                            src="https://th.bing.com/th?id=ORMS.2a67f8bf5d9ba6f715f568bcc47554b4&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0"
+                            height='600px'
+                            width="100%"
+                            className='sliderImage' 
+                            src="https://astonishing-sprinkles-4c4f79.netlify.app/images/cover/cover-3.jpg"
                             alt="Third slide"
                         />
                     </div>
