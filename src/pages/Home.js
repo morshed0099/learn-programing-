@@ -8,6 +8,7 @@ import { TbMathSymbols } from 'react-icons/tb'
 import Carosal from '../shere/Carosal';
 import Testomonial from './Testomonial';
 import AboutSocial from './AboutSocial';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,8 +16,12 @@ import AboutSocial from './AboutSocial';
 
 const Home = () => {
     const [actvieRoute, setActiveRoute] = useState("join")
+    const navigate = useNavigate()
+    const handenRoute = () => {
+        console.log('hellorhsalkasjlfjasf');
+        navigate('/course');
+    }
 
-    console.log(actvieRoute);
     return (
         <div>
             <Container>
@@ -33,53 +38,53 @@ const Home = () => {
                     </div>
                     <div className='p-4'>
                         {
-                            actvieRoute === "join" && 
+                            actvieRoute === "join" &&
                             <div className='position-relative'>
-                                 <div className='backgorund-light'></div>
+                                <div className='backgorund-light'></div>
                                 <p className='fs-4'>
-                                    <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: 12 class sutuden can join
+                                    <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: <span className='text-gray'>12 Class StudenT can join.</span>
                                 </p>
                                 <p className='fs-4'>
-                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : <span className='text-gray'>Besic Math Experience needed.</span>
                                 </p>
                                 <p className='fs-4'>
-                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : <span className='text-gray'>Internet and Laptop,Headphone needed.</span>
                                 </p>
                             </div>
                         }
                         {
-                            actvieRoute === "shedule" && 
-                            <div  className='position-relative'>
-                                 <div className='backgorund-light'></div>
+                            actvieRoute === "shedule" &&
+                            <div className='position-relative'>
+                                <div className='backgorund-light'></div>
                                 <p className='fs-4'>
-                                    <span><FcOnlineSupport className='text-primary' /></span> <b>Suppet</b>: 24/7 support
+                                    <span><FcOnlineSupport className='text-primary' /></span> <b>Suppet</b>: <span className='text-gray'> 24/7 Support.</span>
                                 </p>
                                 <p className='fs-4'>
-                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Class</b> : <span className='text-gray'> EveryDay 8.00 AM to 10.AM.</span>
                                 </p>
                                 <p className='fs-4'>
-                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : <span className='text-gray'>Internet and Laptop,Headphone needed.</span>
                                 </p>
                             </div>
                         }
                         {
                             actvieRoute === "benifit" &&
-                             <div className='position-relative'>
+                            <div className='position-relative'>
                                 <div className='backgorund-light'></div>
                                 <p className='fs-4'>
-                                    <span><FaCertificate className='text-primary' /></span> <b>Certificate</b>: We provided World class certificate
+                                    <span><FaCertificate className='text-primary' /></span> <b>Certificate</b>: <span className='text-gray' >We Provided World Class Certificate</span>.
                                 </p>
                                 <p className='fs-4'>
-                                    <span><TbMathSymbols className='text-primary' /></span> <b>Math</b> : Besict math experience needed
+                                    <span><TbMathSymbols className='text-primary' /></span> <b>Job Plcement Team</b> : <span className='text-gray'>AfterCourses You Can Work with Job Plcement Team.</span>
                                 </p>
                                 <p className='fs-4'>
-                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : Besict math experience needed
+                                    <span><FaLaptop className='text-primary' /></span> <b>Instoments</b> : <span className='text-gray'>Besict math experience needed.</span>
                                 </p>
                             </div>
                         }
                     </div>
 
-                </section>              
+                </section>
                 <section>
                     <AboutSocial />
                 </section>
@@ -123,7 +128,7 @@ const Home = () => {
                                         </div>
                                     </div>
 
-                                    <button style={{ width: '300px' }} className='px-5 mt-4 ms-2 ms-md-5 join-button shadow-lg py-2 rounded fs-4 fw-bold border-0'>Join Us</button>
+                                    <button onClick={handenRoute} style={{ width: '300px' }} className='px-5 mt-4 ms-2 ms-md-5 join-button shadow-lg py-2 rounded fs-4 fw-bold border-0'>Join Us</button>
 
                                 </div>
                             </div>
@@ -133,7 +138,7 @@ const Home = () => {
                             </div>
 
                         </div>
-                       
+
                     </div>
                 </section>
                 <section>

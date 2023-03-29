@@ -2,9 +2,8 @@
 import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { userAuth } from '../AuthProvider';
 import ReactTooltip from 'react-tooltip';
 import { ComputerDesktopIcon } from '@heroicons/react/24/solid'
@@ -51,7 +50,7 @@ const Header = () => {
                   className={`nav-links me-4 mt-2 text-decoration-none`
                   } to='/home'>Home</NavLink>
                 <NavLink
-                  style={({ isActive, isPending }) => {
+                  style={({ isActive }) => {
                     return {
                       fontWeight: isActive ? "semi-bold" : "",
                       color: isActive ? "black" : " ",
@@ -59,7 +58,7 @@ const Header = () => {
                   }}
                   className={`nav-links me-4 mt-2 text-decoration-none`} to='/course'>Course</NavLink>
                 <NavLink
-                  style={({ isActive, isPending }) => {
+                  style={({ isActive}) => {
                     return {
                       fontWeight: isActive ? "semi-bold" : "",
                       color: isActive ? "black" : " ",

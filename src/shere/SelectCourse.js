@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Header from './Header';
 import Card from 'react-bootstrap/Card';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Swal from 'sweetalert2';
 import { userAuth } from '../AuthProvider';
 import Footer from './Footer';
 

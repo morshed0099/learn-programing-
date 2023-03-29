@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import CategoryWiseCourse from '../shere/CategoryWiseCourse';
 import Loading from './Loading';
@@ -6,10 +6,10 @@ import Loading from './Loading';
 
 
 
-const Courses = () => {
-    const [loading, setLoading] = useState(true);   
+const Courses = () => {  
     const courses = useLoaderData();
     const navigation = useNavigation();
+
     
     if (navigation.state === 'loading') {
         return <Loading />

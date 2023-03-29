@@ -1,6 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom';
 
 const Carosal = () => {
+    const navigate=useNavigate()
+    const handelJoinNow=()=>{
+        navigate('/course')
+    }
     return (
         <div className=' p'>
             <Carousel fade>
@@ -10,7 +15,7 @@ const Carosal = () => {
                         <div className='position-absolute content'>
                             <h2 className='text-white '>Just Enroll and Follow Instruction</h2>
                             <p>We Will Change Your Future</p>
-                            <button className='btn btn-primary'>Join Now</button>
+                            <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
                             className=" w-100"
@@ -26,7 +31,7 @@ const Carosal = () => {
                         <div className='position-absolute content'>
                             <h2 className='text-white '>Learn With Us </h2>
                             <p>Do Something</p>
-                            <button className='btn btn-primary'>Join Now</button>
+                            <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
                             className=" w-100"
@@ -42,7 +47,7 @@ const Carosal = () => {
                         <div className='position-absolute content'>
                             <h2 className='text-white '>2023 You Don't Miss</h2>
                             <p>Became a Developer</p>
-                            <button className='btn btn-primary'>Join Now</button>
+                            <button onClick={handelJoinNow} className='btn btn-primary'>Join Now</button>
                         </div>
                         <img
                             className=" w-100"
