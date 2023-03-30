@@ -2,7 +2,8 @@ import React from 'react';
 
 const TrustedCompany = () => {
     return (
-        <div className='d-none mt-4  d-lg-flex justify-content-center align-items-center'>
+        <div data-aos="fade-up"
+            data-aos-duration="2000" className='d-none mt-4  d-lg-flex justify-content-center align-items-center'>
             <div>
                 <img src="https://astonishing-sprinkles-4c4f79.netlify.app/images/company/company-1.png" alt="" />
             </div>

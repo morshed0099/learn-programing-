@@ -31,8 +31,8 @@ const Home = () => {
                 <div>
                     <Carosal />
                 </div>
-                <h2 className='mt-5 mb-2 text-center'>Frequently Asked Questions</h2>
-                <section className='commonQuestion bg-light shadow-lg mb-5 rounded'>
+                <h2 data-aos="fade-up" className='mt-5 pt-4 mb-2 text-center'>Frequently Asked Questions</h2>
+                <section data-aos="fade-up" className='commonQuestion bg-light shadow-lg mb-5 rounded'>
                     <div className='p-2 border rounded-pill mt-4 mb-4'>
                         <div className='d-flex p-2 justify-content-start align-items-center gap-2 borders '>
                             <button onClick={() => setActiveRoute('join')} className={`btn  btn-sm btn-outline-primary ${actvieRoute === "join" && "btn btn-primary text-white"}`}>WHO CAN JOIN</button>
@@ -44,7 +44,7 @@ const Home = () => {
 
                         {
                             actvieRoute === "join" &&
-                            <div className='position-relative'>
+                            <div data-aos="fade-left" className='position-relative'>
                                 <div className='backgorund-light'></div>
                                 <p className='fs-4'>
                                     <span><FaSchool className='text-primary' /></span> <b>Education limitation</b>: <span className='text-gray'>12th Class StudenT can join.</span>
@@ -59,7 +59,7 @@ const Home = () => {
                         }
                         {
                             actvieRoute === "shedule" &&
-                            <div className='position-relative'>
+                            <div data-aos="fade-up" className='position-relative'>
                                 <div className='backgorund-light'></div>
                                 <p className='fs-4'>
                                     <span><FcOnlineSupport className='text-primary' /></span> <b>Suppet</b>: <span className='text-gray'> 24/7 Support.</span>
@@ -74,7 +74,7 @@ const Home = () => {
                         }
                         {
                             actvieRoute === "benifit" &&
-                            <div className='position-relative'>
+                            <div data-aos="fade-right" className='position-relative'>
                                 <div className='backgorund-light'></div>
                                 <p className='fs-4'>
                                     <span><FaCertificate className='text-primary' /></span> <b>Certificate</b>: <span className='text-gray' >We Provided World Class Certificate</span>.
@@ -90,10 +90,10 @@ const Home = () => {
                     </div>
 
                 </section>
-                <section>
+                <section className='mt-5 pt-4'>
                     <AboutSocial />
                 </section>
-                <section >
+                <section data-aos="flip-left" className='mt-5 pt-4' >
                     <div className="header-bannar position-relative">
                         <div className='backgorund-white'></div>
                         <svg class="backgroun-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f0ffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -146,8 +146,8 @@ const Home = () => {
 
                     </div>
                 </section>
-                <section>
-                    <h2 className='text-center mt-5 mb-5'>Meet Our Team Member's</h2>
+                <section className='mt-5 pt-3'>
+                    <h2 data-aos="zoom-in" className='text-center mt-5 mb-5'>Meet Our Team Member's</h2>
                     <Testomonial />
                 </section>
 
@@ -172,12 +172,12 @@ const Home = () => {
                     </div>
 
                 </section> */}
-                <section className='mb-3'>
+                <section className='mt-3 pt-3'>
                     <h2 className='text-bold text-center mt-5 mb-4'>Meet Our Successfull
                         Students</h2>
                     <MeetSuccessStudent />
                 </section>
-                <section className='mt-5'>
+                <section className='mt-5 pt-4'>
                     <h2 className="text-center">
                         Some Students Feedback
                     </h2>
@@ -187,8 +187,8 @@ const Home = () => {
                     </p>
                     <Exprerience />
                 </section>
-                <section className='mt-5 mb-4'>
-                    <h2 className='text-bold  d-lg-block d-none text-center'>Trusted by over 800+ companies</h2>
+                <section className='mt-5 mt-4 mb-4 pb-4'>
+                    <h2 className='fw-bold fs-1  d-lg-block d-none text-center'>Trusted by over 800+ companies</h2>
                     <TrustedCompany />
                 </section>
             </Container>

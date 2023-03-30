@@ -44,13 +44,14 @@ const SignUp = () => {
             
             <Container>
                 <Form style={{maxWidth:"400PX"}} className="border w-75 mx-auto shadow p-3 mt-3 rounded-3" onSubmit={handelSubmit}>
+                    <h2 className='text-center mt-2 mb-3'>Signup Form</h2>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
                         <Form.Control name='name' type="text" placeholder="Enter Your Name" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Photo Url</Form.Label>
-                        <Form.Control name='photoURL' type="text" placeholder="Enter Your photo Url" />
+                        <Form.Control name='photoURL' type="file" placeholder="Enter Your photo Url" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>

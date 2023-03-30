@@ -77,8 +77,7 @@ const SelectCourse = () => {
                 <h1 className='mt-2 text-danger text-decoration-underline'>Help</h1>
                 <p className='text-dark fs-4 mt-2'>For Any Question Mail us : <span className='text-primary'>fakehelp@gmail.com</span></p>
                 <p>Hot Line - <span className='text-danger'>000011477</span> </p>
-            </Container>
-            <Footer></Footer>
+            </Container>        
         </div >
     );
 };

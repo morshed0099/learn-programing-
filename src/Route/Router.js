@@ -6,6 +6,7 @@ import Blogs from "../pages/Blogs";
 import Courses from "../pages/Courses";
 import Home from "../pages/Home";
 import Login from '../pages/Login'
+import MyClass from "../pages/MyClass";
 import SignUp from '../pages/SignUp'
 import Profile from "../profile/Profile";
 import AllCourse from "../shere/AllCourse";
@@ -69,7 +70,10 @@ export const router = createBrowserRouter([
             element: <Faq></Faq>
 
          },
-
+         {
+            path: '/myclass',
+            element: <MyClass />
+         },
          {
             path: '/details/:id',
             loader: ({ params }) => {

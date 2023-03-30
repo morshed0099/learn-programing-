@@ -4,14 +4,14 @@ import buble from '../assests/image/buble.png'
 const Testomonial = () => {
     return (
         <div className='row'>
-            <div className='col-md-6 col-lg-4'>
+            <div  data-aos="fade-right" className='col-md-6 col-lg-4'>
                 <div className='position-relative main-testimonial mb-5'>
                     <div className='d-flex justify-content-center '>
                         <img src={buble} width="280px" alt="" />
                         <div className='position-absolute' >
                             <img className='rounded-pill d-flex justify-content-center' width="200px" src="https://th.bing.com/th/id/OIP.Ks_A_2nNfkBfWSvHe06y5AAAAA?pid=ImgDet&w=400&h=400&rs=1" alt="" />
                             <div className='ms-5 mt-4 d-title'>
-                                <h4>Mr. JR. HOWEL</h4>
+                                <h4>Barbara</h4>
                                 <p>Sr.Developer</p>
                             </div>
                         </div>
@@ -31,15 +31,15 @@ const Testomonial = () => {
 
 
             </div>
-            <div className='col-md-6 col-lg-4'>
+            <div  data-aos="fade-up"   className='col-md-6 col-lg-4'>
                 <div className='position-relative main-testimonial mb-5'>
                     <div className='d-flex justify-content-center '>
                         <img src={buble} width="280px" alt="" />
                         <div className='position-absolute' >
-                            <img className='rounded-pill d-flex justify-content-center' width="200px" src="https://th.bing.com/th/id/OIP.d7wZ_ny1kMUoetTY6C5LnAHaHa?w=183&h=183&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" />
+                            <img className='rounded-pill d-flex justify-content-center' width="200px" src="https://th.bing.com/th/id/OIP.KzkBiXQOWPs6ZAdnoLuS4wHaHa?pid=ImgDet&rs=1" alt="" />
                             <div className='ms-5 mt-4 d-title'>
-                                <h4>Mr. JR. HOWEL</h4>
-                                <p>Sr.Developer</p>
+                                <h4>Katy Perry</h4>
+                                <p>Social Trainer</p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ const Testomonial = () => {
 
 
             </div>
-            <div className='col-md-6 col-lg-4'>
+            <div  data-aos="fade-left" className='col-md-6 col-lg-4'>
                 <div className='position-relative main-testimonial mb-5'>
                     <div className='d-flex justify-content-center '>
                         <img src={buble} width="280px" alt="" />

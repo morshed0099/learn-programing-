@@ -2,7 +2,7 @@ import React from 'react';
 
 const MeetSuccessStudent = () => {
     return (
-        <div className='row gx-4 gy-3'>
+        <div  data-aos="zoom-out-right" className='row gx-4 gy-3'>
             <div className='col-md-4 col-lg-3'>
                 <div>
                     <img width="100%" src="https://astonishing-sprinkles-4c4f79.netlify.app/images/student/student-1.png" alt="" />

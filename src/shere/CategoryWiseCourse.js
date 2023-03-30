@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const CategoryWiseCourse = ({allCourse}) => {
     
     
-    const {id,name,price,duration,image,assignment,video_length,description }=allCourse;
+    const {id,name,image,description }=allCourse;
     return (
         <div>
             <Card className='mb-4 shadow'>

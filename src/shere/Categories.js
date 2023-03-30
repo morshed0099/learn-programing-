@@ -14,7 +14,7 @@ const Categories = () => {
    console.log(cat);
     return (
         <div style={{position:'sticky',top:"95px"}}>
-            <h4>All Category</h4>
+            <h4 className='text-center mb-3 border-bottom'>All Courses</h4>
               {
                 cat.map(category=><p key={category.id}>
                     <Link to={`/details/${category.id}`}><Button className='w-100' variant='primary'> {category.category_name}</Button></Link>

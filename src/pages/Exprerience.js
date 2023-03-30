@@ -4,10 +4,10 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const Exprerience = () => {
     return (
-        <div>
+        <div  data-aos="flip-right">
             <Carousel>
                 <Carousel.Item>
-                    <div className='row gy-3'>
+                    <div  className='row gy-3'>
                         <div className='col-md-6 col-lg-6'>
                             <div className='border rounded p-4'>
                                 <div className='d-flex justify-content-between'>
@@ -75,7 +75,7 @@ const Exprerience = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='row'>
+                    <div className='row gy-3'>
                         <div className='col-md-6 col-lg-6'>
                             <div className='border rounded p-4'>
                                 <div className='d-flex justify-content-between'>
@@ -97,7 +97,7 @@ const Exprerience = () => {
                                 </div>
                                 <div className='d-flex  justify-conten-center gap-2'>
                                     <div>
-                                        <img src="https://astonishing-sprinkles-4c4f79.netlify.app/images/student/student-5.png" alt="" />
+                                        <img src="https://astonishing-sprinkles-4c4f79.netlify.app/images/student/student-6.png" alt="" />
                                     </div>
                                     <div >
                                         <h6>Kayser Tanveer</h6>
@@ -112,7 +112,7 @@ const Exprerience = () => {
                             <div className='border rounded p-4'>
                                 <div className='d-flex justify-content-between'>
                                     <div>
-                                        <img src="https://astonishing-sprinkles-4c4f79.netlify.app/images/student/student-6.png" alt="" />
+                                        <img src="https://astonishing-sprinkles-4c4f79.netlify.app/images/comma.png" alt="" />
                                     </div>
                                     <div>
                                         <FaStar className='start' />
