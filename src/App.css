@@ -140,6 +140,15 @@ color: goldenrod;
   color: goldenrod;
 }
 
+.footer-hero{
+  background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/V1xq1AADx/videoblocks-woman-entrepreneur-working-on-laptop-at-co-working-office-or-library-looks-smart-bookshelves-knowledge-and-self-development_b6bdsmkn7_thumbnail-1080_01.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
 /* .main-testimonial:hover .d-title {
   display: none;
 }
