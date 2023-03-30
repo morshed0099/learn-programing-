@@ -173,18 +173,21 @@ const Home = () => {
 
                 </section> */}
                 <section className='mt-3 pt-3'>
-                    <h2 className='text-bold text-center mt-5 mb-4'>Meet Our Successfull
+                    <h2 data-aos="fade-down"
+                        className='text-bold text-center mt-5 mb-4'>Meet Our Successfull
                         Students</h2>
                     <MeetSuccessStudent />
                 </section>
                 <section className='mt-5 pt-4'>
-                    <h2 className="text-center">
-                        Some Students Feedback
-                    </h2>
-                    <p className='text-gray text-justify text-center mb-4'>
-                        Why you can jonin withou why we are the best explore it by read feadback
-                        if you want to do something you can join with us
-                    </p>
+                    <div data-aos="zoom-in">
+                        <h2 className="text-center">
+                            Some Students Feedback
+                        </h2>
+                        <p className='text-gray text-justify text-center mb-4'>
+                            Why you can jonin withou why we are the best explore it by read feadback
+                            if you want to do something you can join with us
+                        </p>
+                    </div>
                     <Exprerience />
                 </section>
                 <section className='mt-5 mt-4 mb-4 pb-4'>
