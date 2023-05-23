@@ -7,7 +7,7 @@ const Carosal = () => {
         navigate('/course')
     }
     return (
-        <div className=' p'>
+        <div>
             <Carousel fade>
                 <Carousel.Item>
                     <div className='position-relative'>

@@ -32,8 +32,8 @@ const Home = () => {
                     <Carosal />
                 </div>
                 <h2 data-aos="fade-up" className='mt-5 pt-4 mb-2 text-center'>Frequently Asked Questions</h2>
-                <section data-aos="fade-up" className='commonQuestion bg-light shadow-lg mb-5 rounded'>
-                    <div className='p-2 border rounded-pill mt-4 mb-4'>
+                <section data-aos="fade-up" className='commonQuestion bg-light border shadow-md mb-5 rounded'>
+                    <div className='p-2 mt-4 mb-4'>
                         <div className='d-flex p-2 justify-content-start align-items-center gap-2 borders '>
                             <button onClick={() => setActiveRoute('join')} className={`btn  btn-sm btn-outline-primary ${actvieRoute === "join" && "btn btn-primary text-white"}`}>WHO CAN JOIN</button>
                             <button onClick={() => setActiveRoute('shedule')} className={`btn btn-sm btn-outline-primary ${actvieRoute === "shedule" && "btn btn-primary text-white"}`}>CLASS SHEDULE</button>
@@ -106,7 +106,7 @@ const Home = () => {
                         </div>
                         <div className='row p-5 ms-5 '>
                             <div className=' IconSection  col-12 col-lg-6'>
-                                <div className='row' >
+                                <div className='row'>
                                     <div className='col-12 col-md-6'>
                                         <div>
                                             <span className='d-flex align-items-center me-2'>
